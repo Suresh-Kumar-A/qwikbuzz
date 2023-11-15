@@ -2,3 +2,59 @@
   display: block;
   height: 100%;
 }
+
+.layout-wrapper {
+  margin: 0% !important;
+  padding: 0% !important;
+}
+
+.layout-topbar {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    width: 200px;
+  }
+
+  .user-avatar {
+    width: 2rem !important;
+    height: 2rem !important;
+    border-radius: 6px;
+    border: 1px solid var(--surface-border);
+    background-color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    text-decoration: none;
+    /* To make button clickable */
+    cursor: pointer;
+  }
+}
+
+.layout-content {
+  top: 10%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .app-info {
+    width: 50%;
+    left: auto;
+    .main-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  img.app-poster {
+    width: 530px;
+    height: 330px;
+    left: 50%;
+  }
+}
