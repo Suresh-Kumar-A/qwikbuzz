@@ -1,0 +1,26 @@
+<div class="card-center">
+    <p-card [style]="{ width: '450px', padding: '1rem' }">
+        <ng-template pTemplate="header">
+            <div class="text-center pt-3">
+                <img alt="App_Icon" src="assets/images/app-icon-transparent.png" />
+                <div class="p-card-title">Qwik Buzz</div>
+                <div class="p-card-subtitle">Get Started With The App</div>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="content">
+            <button pButton pRipple label="Continue with Google" icon="pi pi-google"
+                class="w-full mb-2 p-button-outlined text-teal-600"></button>
+            <button pButton pRipple label="Continue with Facebook" icon="pi pi-facebook"
+                class="w-full mb-2 p-button-outlined"></button>
+            <button pButton pRipple label="Continue with GitHub" icon="pi pi-github"
+                class="w-full p-button-outlined text-black-alpha-90"></button>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-divider type="solid" align="center">
+                <p-tag severity="success" value="OR"></p-tag>
+            </p-divider>
+            <button pButton pRipple label="Continue as Guest" icon="pi pi-user"
+                class="w-full p-button-warning"></button>
+        </ng-template>
+    </p-card>
+</div>
