@@ -1,0 +1,37 @@
+<div class="layout-wrapper">
+    <div class="layout-topbar px-8 py-5">
+        <img src="assets/images/app-logo-transparent.svg" alt="Qwik Buzz Logo" class="logo">
+        <div class="quick-actions">
+            <button *ngIf="isUserSignedIn" pRipple type="button" class="user-avatar mr-3" pTooltip="User Profile"
+                tooltipPosition="bottom">
+                <p-avatar image="./assets/images/avatar-blue-bear.png"></p-avatar>
+            </button>
+            <button *ngIf="!isUserSignedIn" pButton pRipple label="Sign In" icon="pi pi-user"
+                class="mr-3 p-button-text p-button-info" type="button" (click)="signIn()"></button>
+            <button pButton pRipple label="Join the Buzz" icon="pi pi-star-fill"
+                class="mr-3 p-button-outlined p-button-secondary" type="button"></button>
+            <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button"></button>
+        </div>
+    </div>
+    <div class="layout-content py-2 mt-6">
+        <div class="app-info text-center pr-4">
+            <section>
+                <div class="block text-6xl mb-1">Create an invite only place where you freely Buzz</div>
+                <p class="mt-3 mb-4 text-700 line-height-5 text-2xl">
+                    Imagine a place where you can freely buzz about trending topics, upcoming party plans, secret announcements & much more with your friends. 
+                    Well, Qwik Buzz is your one stop for all. Quickly create a buzz chat room, give a name, & add all your crazy friends.
+                </p>
+            </section>
+            <div class="main-actions px-8">
+                <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button" class="w-17rem"></button>
+                <span class="text-800 font-bold mx-2">or</span>
+                <div class="p-inputgroup p-inputtext-sm">
+                    <input type="text" pInputText placeholder="Enter Buzz Code" />
+                    <button type="button" pButton pRipple icon="pi pi-star-fill" label="Join"
+                        class="p-button-secondary p-button-outlined"></button>
+                </div>
+            </div>
+        </div>
+        <img alt="Qwik Buzz App Poster" class="app-poster px-1" src="assets/images/set-of-halloween-banners.jpg">
+    </div>
+</div>

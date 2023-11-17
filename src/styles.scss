@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/mdc-light-indigo/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0% !important;
+  padding: 0% !important;
+  background-color: var(--app-background-color);
+}
+
+html {
+  display: block;
+}
+
+:root {
+  --app-background-color: #eaf7ee;
+  --app-primary-color: #56558b;
+  --app-primary-mid-dark-color: #474672;
+  --app-primary-dark-color: #373659;
+  --app-accent-color: #c8043f;
+  --app-accent-dark-color: #a00332;
+  --app-extra-color: #7c287c;
+  --app-font-family: Helvetica !important;
+  --app-sidebar-width: 250px;
+  --app-header-height: 4rem;
+}
