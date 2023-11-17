@@ -26,12 +26,19 @@ import { RippleModule } from 'primeng/ripple';
 import { BadgeModule } from 'primeng/badge';
 import { TooltipModule } from 'primeng/tooltip';
 import { AuthComponent } from './pages/auth/auth.component';
+import { environment } from 'src/environment/environment';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { TestComponent } from './pages/test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AuthComponent
+    AuthComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -53,10 +60,14 @@ import { AuthComponent } from './pages/auth/auth.component';
     MenuModule,
     RippleModule,
     BadgeModule,
-    TooltipModule
+    TooltipModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+  export class AppModule { }

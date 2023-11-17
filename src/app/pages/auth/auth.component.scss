@@ -1,23 +1,17 @@
 :host {
-    display: block;
-    height: 100%;
-  }
-  
-  .card-center {
-    background-color: var(--app-background-color);
-    height: 100%;
-    width: 100%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  img {
-    height: 80px !important;
-    width: 80px !important;
-  }
-  
-  a {
-    color: var(--app-accent-color);
-  }
-  
+  display: block;
+  height: 100%;
+}
+
+.layout-wrapper {
+  background-color: var(--app-background-color);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 120px;
+}
