@@ -9,8 +9,9 @@
             <button *ngIf="!isUserSignedIn" pButton pRipple label="Sign In" icon="pi pi-user"
                 class="mr-3 p-button-text p-button-info" type="button" (click)="signIn()"></button>
             <button pButton pRipple label="Join the Buzz" icon="pi pi-star-fill"
-                class="mr-3 p-button-outlined p-button-secondary" type="button"></button>
-            <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button"></button>
+                class="mr-3 p-button-outlined p-button-secondary" type="button" [disabled]="true"></button>
+            <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button"
+                (click)="this.showaddBuzzModel = true;"></button>
         </div>
     </div>
     <div class="layout-content py-2 mt-6">
@@ -25,15 +26,28 @@
                 </p>
             </section>
             <div class="main-actions px-8">
-                <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button" class="w-17rem"></button>
+                <button pButton pRipple label="Start a Buzz" icon="pi pi-bolt" type="button" class="w-17rem"
+                    (click)="this.showaddBuzzModel = true;"></button>
                 <span class="text-800 font-bold mx-2">or</span>
                 <div class="p-inputgroup p-inputtext-sm">
-                    <input type="text" pInputText placeholder="Enter Buzz Code" />
+                    <input type="text" pInputText placeholder="Enter Buzz Code" [disabled]="true" />
                     <button type="button" pButton pRipple icon="pi pi-star-fill" label="Join"
-                        class="p-button-secondary p-button-outlined"></button>
+                        class="p-button-secondary p-button-outlined" [disabled]="true"></button>
                 </div>
             </div>
         </div>
         <img alt="Qwik Buzz App Poster" class="app-poster px-1" src="assets/images/set-of-halloween-banners.jpg">
     </div>
+
+    <p-dialog header="Create new Buzz room" [(visible)]="showaddBuzzModel" [modal]="true" [style]="{ width: '30vw' }"
+        [draggable]="false" [resizable]="false">
+        <form action="#" [formGroup]="addBuzzFormGroup" class="mt-2">
+            <span class="p-float-label mb-3 p-input-icon-left w-full">
+                <i class="pi pi-discord"></i>
+                <input class="w-full" pInputText id="name" type="text" formControlName="name" />
+                <label htmlFor="name">Name</label>
+            </span>
+            <button pButton pRipple label="Create" icon="pi pi-plus" class="w-full" (click)="addBuzzRoom()"></button>
+        </form>
+    </p-dialog>
 </div>

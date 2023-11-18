@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppUser } from 'src/app/models/appuser.modal';
 import { StorageService } from 'src/app/services/storage.service';
@@ -12,6 +13,10 @@ export class HomeComponent implements OnInit {
 
   isUserSignedIn = false;
   appUser: AppUser | undefined;
+  showaddBuzzModel = false;
+  addBuzzFormGroup: FormGroup = new FormGroup({
+    name: new FormControl('')
+  });
 
   constructor(private router: Router,  private storageSvc: StorageService) { }
 
@@ -24,5 +29,9 @@ export class HomeComponent implements OnInit {
 
   signIn() {
     this.router.navigateByUrl('/auth');
+  }
+
+  addBuzzRoom(){
+      this.showaddBuzzModel = false;
   }
 }

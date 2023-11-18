@@ -21,7 +21,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenuModule } from 'primeng/menu';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RippleModule } from 'primeng/ripple';
 import { BadgeModule } from 'primeng/badge';
@@ -33,14 +33,13 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { StorageService } from './services/storage.service';
-import { GuestInfoComponent } from './components/guest.info/guest.info.component';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AuthComponent,
-    GuestInfoComponent
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +47,7 @@ import { GuestInfoComponent } from './components/guest.info/guest.info.component
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     CardModule,
     ButtonModule,
     ImageModule,
@@ -67,7 +67,8 @@ import { GuestInfoComponent } from './components/guest.info/guest.info.component
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    DialogModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent],
