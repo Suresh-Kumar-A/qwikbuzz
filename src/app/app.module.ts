@@ -21,6 +21,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
 import { MenuModule } from 'primeng/menu';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { FormsModule } from '@angular/forms';
 
 import { RippleModule } from 'primeng/ripple';
 import { BadgeModule } from 'primeng/badge';
@@ -32,18 +33,21 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { StorageService } from './services/storage.service';
+import { GuestInfoComponent } from './components/guest.info/guest.info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AuthComponent
+    AuthComponent,
+    GuestInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    FormsModule,
     CardModule,
     ButtonModule,
     ImageModule,

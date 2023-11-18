@@ -1,22 +1,33 @@
 <div class="layout-wrapper">
-    <p-card header="Sign In to continue" subheader="Make the most of your quick buzz app" [style]="{ width: '25rem' }"
-        class="text-center px-4 py-3">
+    <p-card header="Sign In to continue" subheader="Make the most of your quick buzz app" [style]="{ width: '45rem' }"
+        class="text-center px-4 py-4">
         <ng-template pTemplate="header">
             <img src="assets/images/app-icon-transparent.svg" alt="Qwik Buzz Logo" class="logo mt-4">
         </ng-template>
         <ng-template pTemplate="content">
-            <div class="sigin-options mx-4">
-                <button pButton pRipple label="Sign in with Google" icon="pi pi-google" (click)="signInWithGoogle()"
-                    class="mb-3 w-full p-button-outlined text-purple-700" type="button"></button>
-                <button pButton pRipple label="Sign in with Email" icon="pi pi-envelope"
-                    class="mb-3 w-full p-button-outlined text-red-600" type="button" [disabled]="true"></button>
-                <button pButton pRipple label="Sign in with Phone" icon="pi pi-phone"
-                    class="w-full p-button-outlined text-teal-600" type="button" [disabled]="true"></button>
-                <p-divider type="solid" align="center">
+            <div class="flex mx-4">
+                <div class="sigin-options" style="width: 45%;">
+                    <button pButton pRipple label="Sign in with Google" icon="pi pi-google" (click)="signInWithGoogle()"
+                        class="mb-3 w-full p-button-outlined text-purple-700" type="button"></button>
+                    <button pButton pRipple label="Sign in with Email" icon="pi pi-envelope"
+                        class="mb-3 w-full p-button-outlined text-red-600" type="button" [disabled]="true"></button>
+                    <button pButton pRipple label="Sign in with Phone" icon="pi pi-phone"
+                        class="w-full p-button-outlined text-teal-600" type="button" [disabled]="true"></button>
+                </div>
+                <p-divider type="solid" align="center" layout="vertical">
                     <p-tag severity="success" value="OR"></p-tag>
                 </p-divider>
-                <button pButton pRipple label="Continue as Guest" icon="pi pi-user" class="mb-1 w-full p-button-warning"
-                    type="button" (click)="signInAsGuest()"></button>
+                <div class="guest-signin" style="width: 45%;">
+                    <span class="p-float-label mb-3 p-input-icon-left w-full">
+                        <i class="pi pi-discord"></i>
+                        <input class="w-full" pInputText id="guestName" type="text" [(ngModel)]="guestName" />
+                        <label htmlFor="guestName">Enter Guest Name</label>
+                    </span>
+                    <button pButton pRipple label="Continue" icon="pi pi-arrow-right" iconPos="right"
+                        class="mb-1 w-full p-button-warning" type="button" (click)="signInAsGuest()"></button>
+                    <span class="font-medium text-black-alpha-50 mt-1">
+                        Note: Provide a Display name and continue as Guest User</span>
+                </div>
             </div>
         </ng-template>
     </p-card>
