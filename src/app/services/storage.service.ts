@@ -65,7 +65,7 @@ export class StorageService {
         return parsedUser != null && this.isUserObjValid(parsedUser);
     }
 
-    isUserObjValid(user: AppUser): boolean {
+    private isUserObjValid(user: AppUser): boolean {
         if (user == null)
             return false;
         else if (user.uid == null || user.uid.trim().length == 0)

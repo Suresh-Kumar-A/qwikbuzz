@@ -9,14 +9,14 @@
                 <button pButton pRipple label="Sign in with Google" icon="pi pi-google" (click)="signInWithGoogle()"
                     class="mb-3 w-full p-button-outlined text-purple-700" type="button"></button>
                 <button pButton pRipple label="Sign in with Email" icon="pi pi-envelope"
-                    class="mb-3 w-full p-button-outlined text-red-600" type="button"></button>
+                    class="mb-3 w-full p-button-outlined text-red-600" type="button" [disabled]="true"></button>
                 <button pButton pRipple label="Sign in with Phone" icon="pi pi-phone"
                     class="w-full p-button-outlined text-teal-600" type="button" [disabled]="true"></button>
                 <p-divider type="solid" align="center">
                     <p-tag severity="success" value="OR"></p-tag>
                 </p-divider>
                 <button pButton pRipple label="Continue as Guest" icon="pi pi-user" class="mb-1 w-full p-button-warning"
-                    type="button"></button>
+                    type="button" (click)="signInAsGuest()"></button>
             </div>
         </ng-template>
     </p-card>
